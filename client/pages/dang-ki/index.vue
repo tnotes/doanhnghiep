@@ -93,7 +93,7 @@
 				let _ = this;
 				this.$refs['register'].validate(async (valid)=>{
 					if(valid){
-						let {data} = await _.$axios.post('http://localhost:8080/api/account/register',_.formData);
+						let {data} = await _.$axios.post('/api/account/register',_.formData);
 						if(data === 'OK') {
 							_.$message({type:'success',message:'Đăng kí thành công !'});
 							window.location.href = "/";

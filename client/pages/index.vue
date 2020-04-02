@@ -17,7 +17,7 @@
 			try{
 				let cookie = req.headers['set-cookie'].reduce(((previous,current)=>previous+current.split(';')[0]+';'),'');
 				console.log(cookie);
-				let {data} = await $axios.$get('http://localhost:8080/api/profile/get',{headers:{cookie}});
+				let {data} = await $axios.$get('/api/profile/get',{headers:{cookie}});
 				return {data,cookie};
 			}catch(e){
 				res.redirect('/dang-ki')
